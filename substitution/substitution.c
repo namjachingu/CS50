@@ -69,8 +69,5 @@ int main(int argc, string argv[])
             ciphertext[i] = plaintext[i];
         }
     }
-    ciphertext[size] = '\0';
     printf("ciphertext: %s", ciphertext);  
-        
-    
 }
