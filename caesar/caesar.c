@@ -4,7 +4,6 @@
 #include <stdlib.h>
 #include <string.h>
 
-
 int main(int argc, string argv[])
 {
     int integerLetter;
@@ -18,37 +17,33 @@ int main(int argc, string argv[])
     }
 
     integerLetter = atoi(k);
-    for (int i = 0, n = strlen(k); i < n; i++)
+    for (int i = 0; i < strlen(k)+1; i++)
     {   
         //Check if positive integer, and also if input is a digit. 
         if (integerLetter >= 0 && isdigit(k[i]))
         {
             integerLetter = atoi(k);
-            string plaintext = get_string("Plaintext: ");
-            for (int j = 0; j < strlen(plaintext); j++)
+            string plaintext = get_string("plaintext: ");
+            for (int j = 0; j < strlen(plaintext)+1; j++)
             {
                 //Change only alphabetic letters
-                if (isalpha(plaintext[j]) != 0)
+                if (isalpha(plaintext[j]))
                 {    
                     //Need to first convert letter range, from its original ASCII values, to a range of 0-25 because of modulo. 
                     //After, add the letters back to convert it to ASCII again
                     if (isupper(plaintext[j]))
                     {
-                        ciphertext[j] = ((plaintext[j] - 'A') + integerLetter) % 26;
-                        ciphertext[i] = ciphertext[i] + 'A';
+                        ciphertext[j] = ((plaintext[j] - 'A') + integerLetter) % 26 + 'A';
                     }
                     else
                     {
-                        ciphertext[j] = ((plaintext[j] - 'a') + integerLetter) % 26;
-                        ciphertext[j] = ciphertext[j] + 'a';
+                        ciphertext[j] = ((plaintext[j] - 'a') + integerLetter) % 26 + 'a';
                     }
-
                 }
                 else
                 {
                     ciphertext[j] = plaintext[j];
                 }
-
             }
         }
         else
@@ -57,10 +52,7 @@ int main(int argc, string argv[])
             return 1;
         }
 
-        printf("Ciphertext: %s \n", ciphertext);
-
+        printf("ciphertext: %s\n", ciphertext);
+        return 0;
     }
 }
-
-
-    
