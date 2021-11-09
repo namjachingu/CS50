@@ -7,7 +7,7 @@
 int main(int argc, string argv[])
 {
     int integerLetter;
-    string ciphertext;
+    char ciphertext[strlen(plaintext) + 1];
     string k = argv[1];
 
     if (argc != 2)
