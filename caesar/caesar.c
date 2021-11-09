@@ -17,14 +17,14 @@ int main(int argc, string argv[])
     }
 
     integerLetter = atoi(k);
-    for (int i = 0; i < strlen(k)+1; i++)
+    for (int i = 0; i < strlen(k) + 1; i++)
     {   
         //Check if positive integer, and also if input is a digit. 
         if (integerLetter >= 0 && isdigit(k[i]))
         {
             integerLetter = atoi(k);
             string plaintext = get_string("plaintext: ");
-            for (int j = 0; j < strlen(plaintext)+1; j++)
+            for (int j = 0; j < strlen(plaintext) + 1; j++)
             {
                 //Change only alphabetic letters
                 if (isalpha(plaintext[j]))
