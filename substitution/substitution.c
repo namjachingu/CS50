@@ -1,14 +1,14 @@
+#include <ctype.h>
 #include <cs50.h>
 #include <stdio.h>
-#include "string.h"
-#include <ctype.h>
 #include <stdlib.h>
+#include <string.h>
 
 
 int main(int argc, string argv[])
-{
-    string ciphertext;
-    
+{    
+    string plaintext = get_string("plaintext: ");
+    char ciphertext[strlen(plaintext) + 1];
     
     if (strlen(argv[1]) != 26)
     {
@@ -16,7 +16,7 @@ int main(int argc, string argv[])
         return 1;
  
     }
-    else if (argc != 2)
+    if (argc != 2)
     {
         printf("Usage: ./substitution key \n");
         return 1;
@@ -29,45 +29,38 @@ int main(int argc, string argv[])
             printf("Key must be letters only! \n");
             return 1;
         } 
-        
-        /*
-        for(int j = 0; j<strlen(argv[1]); j++)
+        else if (argv[1][i] == argv[1][i+1])
         {
-            if(argv[1][j+1] == argv[1][i])
-            {
-            printf("Key cannot have any repeated characters! \n");
-            return 1;
-            }
-        }
-        */
-       if(argv[1][i] == argv[1][i+1])
-       {
             printf("Key cannot have any repeated characters! \n");
             return 1;           
-       }
-    }
- 
-
-    string plaintext = get_string("plaintext: ");
-    printf("plain: %lu\n", strlen(plaintext));
-    for(int i = 0; i < strlen(plaintext); i++)
-    {        
-        if (isalpha(plaintext[i]) && isupper(plaintext[i]))
-        {
-            ciphertext[i] = plaintext[i] - 'A'; //FEIL HER
-            printf("char: %c\n",ciphertext[i]);
-            ciphertext[i] = argv[1][ciphertext[i]]; 
         }
-        else if (isalpha(plaintext[i]) && islower(plaintext[i]))
-        {
-            ciphertext[i] = plaintext[i] - 'a'; //FEIL HER
-            printf("char: %c\n",ciphertext[i]);
-            ciphertext[i] = argv[1][ciphertext[i]]; 
-        }    
         else
         {
-            ciphertext[i] = plaintext[i];
-        }
+            for(int j = 0; j < strlen(argv[1])+1; j++)
+                {        
+                    if (isalpha(plaintext[j]))
+                    {
+                        if(isupper(plaintext[j]))
+                        {
+                            //ciphertext[i] = plaintext[i] - 'A'; //FEIL HER
+                            int position = plaintext[j] - 'A';
+                            ciphertext[i] = toupper(argv[1][position]); 
+                        }
+                        else
+                        {
+                            //ciphertext[i] = plaintext[i] - 'a'; //FEIL HER
+                            int position = plaintext[j] - 'a';
+                            ciphertext[j] = tolower(argv[1][position]); 
+                        }    
+                    }
+                    else
+                    {
+                        ciphertext[j] = plaintext[j];
+                    }
+                    
+                }
+       }
     }
-    printf("ciphertext: %s", ciphertext);  
+    printf("ciphertext: %s\n", ciphertext);  
+    return 0;
 }
