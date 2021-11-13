@@ -1,8 +1,5 @@
 ## Caesar
 
-Encrypt messages by shifting each letter with some number of places. For instance, A as B, B as C, etc. and wrap around alphabetically, Z as A. 
-And so, to say HELLO to someone, Caesar might write IFMMP. The users should decrypt the ciphertext into its original plaintext using a key. 
-
 Caesar’s algorithm encrypts messages by “rotating” each letter by k positions. More formally, if p is some plaintext (i.e., an unencrypted message),
 p_i is the ith character in p, and k is a secret key (i.e., a non-negative integer), then each letter, c_i, in the ciphertext, c, is computed as
 
