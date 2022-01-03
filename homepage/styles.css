@@ -1,0 +1,85 @@
+.jumbotron {
+    background-color: #FFF0F5;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+h1 {
+    color: #DB7093;
+    font-family: "Lucida Console", "Courier New", monospace;
+    text-align: center;
+}
+
+
+.header2 {
+    padding-left: 16px;
+    color: #F08080;
+    font-family: "Lucida Console", "Courier New", monospace;
+    word-spacing: -10px;
+}
+
+h4 {
+    color: #F08080;
+    font-family: "Lucida Console", "Courier New", monospace;
+    text-align: center;
+    font-size: 23px;
+    left: 10px
+}
+
+ul {
+  list-style-type: circle;
+  padding-left: 30px;
+  font-family: "Lucida Console", "Courier New", monospace;
+}
+
+.text{
+    padding: 30px;
+}
+
+.input {
+    color: #F08080;
+}
+
+
+button {
+    color: #F08080;
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 300px;
+    width: 100%;
+    color: #F08080;
+    text-align: center;
+    font-family: "Lucida Console", "Courier New", monospace;
+
+}
+
+.button1 {
+  background-color: #FFF0F5; /* Green */
+  border: none;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-family: "Lucida Console", "Courier New", monospace;
+}
+
+.card {
+    background-color: #FFE4E1;
+    color: white;
+    position: absolute;
+    right: 20px;
+    top: 115px;
+}
+
+
+img {
+    width: 250px;
+    height: 250px;
+    position: fixed;
+    bottom: 10px;
+    left: 320px;
+}
